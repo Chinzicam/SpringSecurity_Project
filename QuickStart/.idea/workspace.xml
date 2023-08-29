@@ -4,16 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3bd4fa17-d9cc-49ea-862f-f0b54b6128c0" name="更改" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/czc/SecurityApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/czc/controller/HelloController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../README.md" afterDir="false" />
+    <list default="true" id="3bd4fa17-d9cc-49ea-862f-f0b54b6128c0" name="更改" comment=":sparkles: 初始化项目">
+      <change afterPath="$PROJECT_DIR$/../.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/Springsecurity.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/QuickStart.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/czc/SecurityApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/czc/SecurityApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/czc/controller/HelloController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/czc/controller/HelloController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/czc/SecurityApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/czc/SecurityApplication.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/czc/controller/HelloController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/czc/controller/HelloController.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,7 +61,9 @@
     "RequestMappingsPanelWidth1": "75",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "E:/Learnfiles/Github/Springsecurity",
     "settings.editor.selected.configurable": "MavenSettings",
     "spring.configuration.checksum": "3274b5830b06b0dfe317072a899af6d6",
     "vue.rearranger.settings.migration": "true"
@@ -96,8 +98,18 @@
       <option name="presentableId" value="Default" />
       <updated>1693208954968</updated>
       <workItem from="1693208956279" duration="1722000" />
-      <workItem from="1693223966378" duration="610000" />
+      <workItem from="1693223966378" duration="2434000" />
+      <workItem from="1693234585785" duration="1104000" />
+      <workItem from="1693290977468" duration="853000" />
     </task>
+    <task id="LOCAL-00001" summary=":sparkles: 初始化项目">
+      <created>1693225301057</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1693225301057</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -113,5 +125,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value=":sparkles: 初始化项目" />
+    <option name="LAST_COMMIT_MESSAGE" value=":sparkles: 初始化项目" />
   </component>
 </project>

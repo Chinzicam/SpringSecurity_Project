@@ -1,5 +1,6 @@
 package com.czc.controller;
 
+
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -9,10 +10,8 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/hello")
 public class HelloController {
-
     @RequestMapping("/world")
     public String hello(){
-        return "欢迎，开始你的学习旅程吧";
+        return "欢迎，开始你新的学习旅程吧";
     }
-
 }

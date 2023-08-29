@@ -7,9 +7,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * @author czc
  */
 @SpringBootApplication
-public class SecurityApplication {
+public class TokenApplication {
     public static void main(String[] args) {
-        SpringApplication.run(SecurityApplication.class,args);
-        System.out.println("项目已启动...");
+        SpringApplication.run(TokenApplication.class,args);
     }
 }
