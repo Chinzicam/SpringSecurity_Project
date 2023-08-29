@@ -66,6 +66,12 @@
             <artifactId>mysql-connector-java</artifactId>
         </dependency>
 
+        <!--引入Junit，用于测试-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+        </dependency>
+
     </dependencies>
 
 
