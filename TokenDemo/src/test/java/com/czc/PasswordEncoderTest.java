@@ -19,7 +19,7 @@ public class PasswordEncoderTest {
 //        BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
 
         //模拟用户输入的密码
-        String encode1 = passwordEncoder.encode("1234");
+        String encode1 = passwordEncoder.encode("czc123");
         //再模拟一次用户输入的密码
         String encode2 = passwordEncoder.encode("1234");
         //虽然这两次的密码都是一样的，但是加密后是不一样的。每次运行，对同一原文都会有不同的加密结果
@@ -31,8 +31,7 @@ public class PasswordEncoderTest {
     public void yyTestBCryptPasswordEncoder(){
 //        BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
 
-        //模拟用户输入了1234(第一个参数)，然后我们去跟数据库的密文进行比较(第二个参数)
-        boolean result = passwordEncoder.matches("1234", "$2a$10$wVcK72jhwzgYhEzLlrMdQOwgmOQJcUywlce7ACbge6KYKqNL2lq36");
+        boolean result = passwordEncoder.matches("czc123", "$2a$10$eFuPitt7q0SiFjIJVfCP1.jmdFD264axKxmXLwMkYTRn/Dh.q3V0C");
 
         //看一下比对结果
         System.out.println(result);
