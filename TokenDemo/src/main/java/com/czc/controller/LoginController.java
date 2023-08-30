@@ -24,4 +24,14 @@ public class LoginController {
     public ResponseResult login(@RequestBody User user){
         return loginService.login(user);
     }
+
+
+    /**
+     * 退出登录
+     * @return
+     */
+    @RequestMapping("/user/logout")
+    public ResponseResult logout(){
+        return loginService.logout();
+    }
 }

@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 
 import java.util.HashMap;
@@ -28,6 +29,12 @@ public class LoginServiceImpl implements LoginService {
     @Autowired
     private RedisCache redisCache;
 
+    /**
+     * 登录
+     * 判断是否认证，利用userId生成jwt，存入redis，当作token存入redis，同时返回给前端
+     * @param user
+     * @return
+     */
     @Override
     public ResponseResult login(User user) {
         UsernamePasswordAuthenticationToken authenticationToken = new UsernamePasswordAuthenticationToken(user.getUserName(), user.getPassword());
@@ -42,12 +49,27 @@ public class LoginServiceImpl implements LoginService {
         String userId = loginUser.getUser().getId().toString();
         String jwt = JwtUtil.createJWT(userId);
 
-        //authenticate存入redis
+        //存入redis
         redisCache.setCacheObject("login:"+userId,loginUser);
         //把token响应给前端
         HashMap<String,String> map = new HashMap<>();
         map.put("token",jwt);
 
         return new ResponseResult(200,"登陆成功",map);
+    }
+
+    /**
+     * 退出登录
+     * @return
+     */
+    @Override
+    public ResponseResult logout() {
+        //获取loginUser
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        LoginUser loginUser = (LoginUser) authentication.getPrincipal();
+        //从redis删除key
+        String redisKey ="login:"+ loginUser.getUser().getId().toString();
+        redisCache.deleteObject(redisKey);
+        return new ResponseResult(200,"注销成功");
     }
 }
