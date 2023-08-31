@@ -7,10 +7,10 @@ import org.springframework.web.bind.annotation.RestController;
  * @author czc
  */
 @RestController
-@RequestMapping("/hello")
+@RequestMapping()
 public class HelloController {
 
-    @RequestMapping("/world")
+    @RequestMapping("/hello")
     public String hello(){
         return "欢迎，开始你的学习旅程吧";
     }
