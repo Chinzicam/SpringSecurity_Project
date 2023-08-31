@@ -9,3 +9,6 @@
 ​	**授权：经过认证后判断当前用户是否有权限进行某个操作。认证和授权也是SpringSecurity作为安全框架的核心功能**
 
 ​	认证和授权也是SpringSecurity作为安全框架的核心功能
+
+本仓库对应的[文档](https://www.chinzicam.top/2023/08/28/SpringSecurity/)
+对应的[教程视频](https://www.bilibili.com/video/BV1mm4y1X7Hc)
