@@ -58,6 +58,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 // 对于登录接口 anonymous表示允许匿名访问
                 .antMatchers("/user/login").anonymous()
                 .antMatchers("/hello").permitAll()
+                //基于配置的的权限控制。指定接口的地址，为HelloController类里面的/configAuth接口，指定权限为system:dept:list
+                .antMatchers("/configAuth").hasAuthority("system:dept:list")
                 // 除上面外的所有请求全部需要鉴权认证
                 .anyRequest().authenticated();
         //---------------------------认证过滤器的实现----------------------------------
