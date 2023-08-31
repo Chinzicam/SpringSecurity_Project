@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/hello")
 public class HelloController {
     @RequestMapping()
-    @PreAuthorize("hasAuthority('test')")//判断用户是否有test权限，返回布尔类型
+    @PreAuthorize("hasAuthority('system:test:list')")//判断用户是否有test权限，返回布尔类型
     public String hello(){
         return "欢迎，开始你新的学习旅程吧";
     }
