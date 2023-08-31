@@ -10,6 +10,10 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 /**
  * 重写登录认证
  * @author czc
@@ -28,8 +32,11 @@ public class MyUserDetailServiceImpl implements UserDetailsService {
         if(user==null){
             throw new RuntimeException("用户名或者密码错误");
         }
+        //自定义了3个权限，用List集合存储
+        List<String> list = new ArrayList<>(Arrays.asList("test","adminAuth","czcAuth"));
+
         //把查询到的user结果，封装成UserDetails类型，然后返回。
         //由于UserDetails是个接口，需要新建LoginUser类，作为UserDetails的实现类
-        return new LoginUser(user);
+        return new LoginUser(user,list);
     }
 }

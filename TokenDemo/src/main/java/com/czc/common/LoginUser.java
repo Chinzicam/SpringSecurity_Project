@@ -1,29 +1,55 @@
 package com.czc.common;
 
+import com.alibaba.fastjson.annotation.JSONField;
 import com.czc.entity.User;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
+import java.util.ArrayList;
 import java.util.Collection;
+import java.util.List;
 
 /**
  * @author czc
  */
 @Data
 @NoArgsConstructor
-@AllArgsConstructor
 //实现UserDetails接口
 public class LoginUser implements UserDetails {
 
     private User user;
 
+    private List<String> permissions;
+
+    @JSONField(serialize = false) //这个注解的作用是不让下面那行的成员变量序列化存入redis，避免redis不支持而报异常
+    private List<SimpleGrantedAuthority> authorities;
+
+    public LoginUser(User user, List<String> permissions) {
+        this.user = user;
+        this.permissions = permissions;
+    }
+
+    /**
+     *  用于返回权限信息
+     * @return
+     */
     @Override
-    //用于返回权限信息
     public Collection<? extends GrantedAuthority> getAuthorities() {
-        return null;
+        //严谨来说这个if判断是避免整个调用链中security本地线程变量在获取用户时的重复解析
+        if(authorities != null){
+            return authorities;
+        }
+        authorities = new ArrayList<>();
+        for (String permission : permissions) {
+            SimpleGrantedAuthority authority = new SimpleGrantedAuthority(permission);
+            authorities.add(authority);
+        }
+
+        return authorities;
     }
 
     @Override
