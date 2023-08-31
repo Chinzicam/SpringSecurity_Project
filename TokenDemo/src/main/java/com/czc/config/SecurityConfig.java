@@ -62,10 +62,16 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .anyRequest().authenticated();
         //---------------------------认证过滤器的实现----------------------------------
 
-        //把token校验过滤器添加到过滤器链中
+        //配置token校验过滤器
         //第一个参数是上面注入的我们在filter目录写好的类，第二个参数表示你想添加到哪个过滤器之前
         http.addFilterBefore(jwtAuthenticationTokenFilter, UsernamePasswordAuthenticationFilter.class);
-        http.exceptionHandling().authenticationEntryPoint(authenticationEntryPoint).
-                accessDeniedHandler(accessDeniedHandler);
+        //配置异常处理器
+        http.exceptionHandling()
+                //配置认证失败处理器
+                .authenticationEntryPoint(authenticationEntryPoint)
+                .accessDeniedHandler(accessDeniedHandler);
+
+        //允许跨域
+        http.cors();
     }
 }
